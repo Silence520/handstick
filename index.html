@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/systemjs/0.20.19/system.js"></script>
+	<!-- <script src="index.js" type="text/javascript" charset="utf-8" ></script> -->
+	<style type="text/css" media="screen">
+		.hander{
+			position: relative;
+			width: 90px;
+			height: 120px;
+			background: #FFD5C5;
+			/*border: 2px solid #000;*/
+			border-top: 2px solid #000;
+			border-left: 2px solid #000;
+			border-bottom: 2px solid #000;
+			margin: 200px;
+			border-top-left-radius: 8px;
+			border-bottom-left-radius: 9px;
+			border-bottom-left-radius: 9px;
+			/*box-shadow: -6px  0px 10px 20px rgba(255,255,255,.1) inset;*/
+		}
+		.hander::after{
+			content: '';
+			width: 90px;
+			height:16px;
+			display: inline-block;
+			border-bottom: 2px solid #000;
+			background: #ffd5c5;
+			position: absolute;
+			border-bottom-left-radius: 50%;
+			border-bottom-right-radius: 44%;
+			bottom: -8px;
+			left: 0px;
+		}
+		.hander::before{
+			content: '';
+			width: 20px;
+			height:118px;
+			display: inline-block;
+			border-left: 3px solid #000;
+			background: #ffd5c5;
+			position: absolute;
+			bottom: -1px;
+			left: -7px;
+			border-bottom-left-radius:40% ;
+			border-top-right-radius:40% ;
+			border-top-left-radius:30% ;
+			z-index: 999;
+		}
+		.hand01{
+			width: 30px;
+			height:30px;
+			display: inline-block;
+			border: 2px solid #000;
+			border-left: none;
+			background: #ffd5c5;
+			border-top-right-radius:40%;
+			border-bottom-right-radius:40% ;
+			position: absolute;
+			right: -30px;
+			top: -2px;
+			box-shadow:  -2px  0px 10px #fff inset;
+		}
+		.hand01::after{
+			content: '';
+			display: inline-block;
+			width: 30px;
+			height:30px;
+			border: 2px solid #000;
+			border-left: none;
+			background: #ffd5c5;
+			border-top-right-radius:40%;
+			border-bottom-right-radius:40% ;
+			position: absolute;
+			right:-2px;
+			top: 32px;
+			box-shadow: -2px  0px 10px #fff inset;
+
+		}
+		.hand01::before{
+			content: '';
+			display: inline-block;
+			width: 30px;
+			height:30px;
+			border: 2px solid #000;
+			border-left: none;
+			background: #ffd5c5;
+			border-top-right-radius:40%;
+			border-bottom-right-radius:40% ;
+			position: absolute;
+			right: -2px;
+			top: 65px;
+			box-shadow: -2px  0px 10px #fff inset;
+		}
+		.hand02{
+			width: 30px;
+			height:20px;
+			display: inline-block;
+			border: 2px solid #000;
+			border-left: none;
+			background: #ffd5c5;
+			border-top-right-radius:40%;
+			border-bottom-right-radius:40% ;
+			position: absolute;
+			right: -30px;
+			bottom: -2px;
+			box-shadow: -2px  0px 10px #fff inset;
+			border-bottom-left-radius: 10%;
+		}
+
+		.hand02:after{
+			content: "";
+			width: 80px;
+			height:40px;
+			display: inline-block;
+			border: 2px solid #000;
+			border-left: none;
+			background: #ffd5c5;
+			border-top-right-radius:45%;
+			border-bottom-right-radius:45% ;
+			border-bottom-left-radius:50% ;
+			border-top-left-radius:10% ;
+			position: absolute;
+			right: 28px;
+			bottom: 118px;
+			transform:rotate(-67deg);
+			box-shadow: -6px  0px 10px #fff inset;
+		}
+		.hand02:before{
+			content: "";
+			width: 80px;
+			height:40px;
+			display: inline-block;
+			background: #ffd5c5;
+			position: absolute;
+			right: 30px;
+			bottom: 80px;
+			z-index: 99;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="hander">
+		<span class="hand01"></span>
+		<span class="hand02"></span>
+	</div>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	var liHello=function (){
+	 	console.log('lihaibo')
+	 }
+	$.extend({liHello});
+	// $.fn.extend({liHello});
+	// $('.hande').liHello();
+	var zan=0;
+	 // SystemJS.import('dianzan.js');
+	 // console.log(addzan)
+
+	 SystemJS.import('./dianzan.js').then(function (m) {
+	   console.log(m);
+	 });
+
+
+	 
+	// SystemJS.import('dianzan.js').then(function(add){
+		console.log(add)
+		$(document).on('click','.hander',function(){
+		 		// $.liHello();
+				
+		})	
+	 // });
+</script>
