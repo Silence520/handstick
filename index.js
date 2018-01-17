@@ -12,12 +12,18 @@
 			super(num)
 		  }
 		  dianzan(){
-		  	let newnum=this.add()
-		  	console.log('小手点赞'+newnum )
-		  	return newnum;
+		  	if(typeof(this.num)=='number'){
+		  		let num=this.add()
+		  		console.log('小手点赞'+num )
+		  		return num;
+		  	}else{
+		  		return 0;
+		  	}
+		  	
 		  }
 	}
-module.exports =addzan= num => new Thumb(num).dianzan();
+let addLikes=num => new Thumb(num).dianzan();
+module.exports =addLikes;
  
 
 

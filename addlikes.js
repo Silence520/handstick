@@ -37,15 +37,20 @@ var Thumb = function (_Praisebutton) {
 	_createClass(Thumb, [{
 		key: 'dianzan',
 		value: function dianzan() {
-			var newnum = this.add();
-			console.log('小手点赞' + newnum);
-			return newnum;
+			if (typeof this.num == 'number') {
+				var num = this.add();
+				console.log('小手点赞' + num);
+				return num;
+			} else {
+				return 'error';
+			}
 		}
 	}]);
 
 	return Thumb;
 }(Praisebutton);
 
-module.exports = addzan = function addzan(num) {
+var addLikes = function addLikes(num) {
 	return new Thumb(num).dianzan();
 };
+module.exports = addLikes;
